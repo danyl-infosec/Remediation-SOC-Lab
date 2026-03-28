@@ -62,17 +62,16 @@ To counter this, I wrote a Sigma rule targeting Sysmon registry events. The rule
 ![Lab 3 Screenshot 8](https://raw.githubusercontent.com/danyl-infosec/Remediation-SOC-Lab/refs/heads/main/Lab%203%20Screenshot%208.png)
 
 ### Pyramid of Pain Mapping
-- **Artifact/TTP level**: Much harder for attackers to change, disrupts their defense evasion strategy.  
-- Demonstrates proactive detection and long‑term resilience.  
+- **Artifact/TTP level**: Much harder for attackers to change because these behaviors are tied to how their malware actually works. For example, disabling Windows Defender through registry edits is a built‑in evasion technique; they can’t just swap an IP or domain to avoid detection. To bypass this, they would need to re‑engineer their malware or adopt a completely different defense evasion method, which takes time and effort.  
+- This makes artifact/TTP detection more resilient and forces attackers to invest significantly more time and resources to adapt.
+
 
 ### Reflection
-By moving beyond IOC blocking to artifact/TTP detection, I created lasting pain for the attacker. This shows the ability to translate sandbox observations into actionable Sigma rules tied to MITRE ATT&CK.
+By moving beyond IOC blocking to artifact/TTP detection, I created lasting pain for the attacker. This shows the ability to translate sandbox observations into actionable Sigma rules tied to the MITRE ATT&CK framework.
 
 ---
 
 ## Closing Note
-This lab demonstrates layered defense:
-- **Stage 1**: Immediate containment via firewall egress block (IOC).  
-- **Stage 3**: Strategic disruption via Sigma rule for registry defense evasion (Artifact/TTP).  
+This lab shows how layered defense works in practice, starting with quick IOC containment at the firewall and moving up to artifact/TTP detection with Sigma rules. Together, these steps highlight both immediate response and longer‑term resilience, showing the practical SOC remediation skills I applied in this lab.
 
-Together, they show breadth (network + host) and depth (IOC + TTP) — a recruiter‑ready case study that highlights practical SOC remediation skills.
+

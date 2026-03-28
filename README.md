@@ -5,13 +5,13 @@ In this lab I show how I handled a malicious alert using the Pyramid of Pain fra
 
 ---
 
-## Stage 1 – Firewall (IOC Containment)
+## Firewall (IOC Containment)
 
 ### Detection
 - Alert received for malicious file `sample2.exe` delivered via phishing email.
 - Sandbox analysis revealed outbound connection to malicious IP `154.35.10.113`.
 
-![Screenshot Placeholder – Firewall Detection]
+![Lab 3 Screenshot 1](https://raw.githubusercontent.com/danyl-infosec/Remediation-SOC-Lab/refs/heads/main/Lab%203%20Screenshot%201.png)
 
 ### Analysis
 - Indicator of Compromise (IOC): Attacker IP address.

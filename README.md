@@ -28,7 +28,8 @@ In this lab I show how I handled a malicious alert using the Pyramid of Pain fra
   - **Action**: Deny  
 - Effectively stopped all outbound connections to the malicious server.
 
-![Screenshot Placeholder – Firewall Rule]
+![Lab 3 Screenshot 2](https://raw.githubusercontent.com/danyl-infosec/Remediation-SOC-Lab/refs/heads/main/Lab%203%20Screenshot%202.png)
+
 
 ### Pyramid of Pain Mapping
 - **IOC level**: Quick containment, attacker can pivot by changing IP.

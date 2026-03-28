@@ -13,6 +13,10 @@ In this lab I show how I handled a malicious alert using the Pyramid of Pain fra
 
 ![Lab 3 Screenshot 1](https://raw.githubusercontent.com/danyl-infosec/Remediation-SOC-Lab/refs/heads/main/Lab%203%20Screenshot%201.png)
 
+
+![Lab 3 Screenshot 3](https://raw.githubusercontent.com/danyl-infosec/Remediation-SOC-Lab/refs/heads/main/Lab%203%20Screenshot%20%233.png)
+
+
 ### Analysis
 - Indicator of Compromise (IOC): Attacker IP address.
 - Likely Command & Control (C2) server connection.

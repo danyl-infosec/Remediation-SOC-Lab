@@ -64,4 +64,5 @@ In this lab I show how I handled a malicious alert using the Pyramid of Pain fra
 - **Value**: 1
 - **Att&ck ID**: Defence Evasion TA0005
   
+![Lab 3 Screenshot 8](https://raw.githubusercontent.com/danyl-infosec/Remediation-SOC-Lab/refs/heads/main/Lab%203%20Screenshot%208.png)
 

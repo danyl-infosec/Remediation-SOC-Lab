@@ -39,7 +39,7 @@ Blocking IPs provides rapid relief but is fragile against attacker adaptation. I
 ## Host Artifacts (Defense Evasion Disruption)
 
 ### Detection
-After the initial IOC containment, the attacker pivoted to evade simple defenses like domain/IP blocking. I obtained another malicious file (`sample4.exe`) for analysis and ran it in a sandbox to observe its behavior. During execution, I noticed suspicious registry activity — the malware attempted to disable Windows Defender’s real‑time monitoring by modifying:
+After the initial IOC containment, the attacker pivoted to evade simple defenses like domain/IP blocking. I obtained another malicious file (`sample4.exe`) for analysis and ran it in a sandbox to observe its behavior. During execution, I noticed suspicious registry activity. The malware attempted to disable Windows Defender’s real‑time monitoring by modifying:
 
 - **Key**: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Real-Time Protection`  
 - **Name**: `DisableRealtimeMonitoring`  

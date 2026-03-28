@@ -29,8 +29,7 @@ This effectively stopped all outbound traffic to the attacker’s C2 server.
 ![Lab 3 Screenshot 2](https://raw.githubusercontent.com/danyl-infosec/Remediation-SOC-Lab/refs/heads/main/Lab%203%20Screenshot%202.png)
 
 ### Pyramid of Pain Mapping
-- **IOC level**: Quick containment, but attacker can easily pivot by changing IP.  
-- Demonstrates immediate defensive action at the network edge.  
+- **IOC level**: Quick containment, but the attacker can easily pivot by changing IP using techniques like fast flux.  
 
 ### Reflection
 Blocking IPs provides rapid relief but is fragile against attacker adaptation. It reinforces the need to escalate detection to higher levels of the Pyramid of Pain.
@@ -40,7 +39,7 @@ Blocking IPs provides rapid relief but is fragile against attacker adaptation. I
 ## Host Artifacts (Defense Evasion Disruption)
 
 ### Detection
-The attacker pivoted again, registering new domains to bypass DNS blocks. I sandboxed another malicious file (`sample4.exe`) and observed registry activity. The malware attempted to disable Windows Defender’s real‑time monitoring by modifying:
+After the initial IOC containment, the attacker pivoted to evade simple defenses like domain/IP blocking. I obtained another malicious file (`sample4.exe`) for analysis and ran it in a sandbox to observe its behavior. During execution, I noticed suspicious registry activity — the malware attempted to disable Windows Defender’s real‑time monitoring by modifying:
 
 - **Key**: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Real-Time Protection`  
 - **Name**: `DisableRealtimeMonitoring`  
@@ -53,7 +52,7 @@ The attacker pivoted again, registering new domains to bypass DNS blocks. I sand
 - MITRE ATT&CK Technique: Defense Evasion (TA0005).  
 
 ### Remediation
-To counter this, I authored a Sigma rule targeting Sysmon registry events. The rule detects attempts to disable Defender’s real‑time protection:
+To counter this, I wrote a Sigma rule targeting Sysmon registry events. The rule detects attempts to disable Defender’s real‑time protection:
 
 - **Registry Key**: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Real-Time Protection`  
 - **Registry Name**: `DisableRealtimeMonitoring`  

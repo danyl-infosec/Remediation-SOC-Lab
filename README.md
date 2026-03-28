@@ -41,7 +41,7 @@ In this lab I show how I handled a malicious alert using the Pyramid of Pain fra
 
 ---
 
-## Stage 3 – Host Artifacts (Defense Evasion Disruption)
+## Host Artifacts (Defense Evasion Disruption)
 
 ### Detection
 - Alert received for malicious file `sample4.exe`.
@@ -50,7 +50,8 @@ In this lab I show how I handled a malicious alert using the Pyramid of Pain fra
   - Name: `DisableRealtimeMonitoring`  
   - Value: `1`
 
-![Screenshot Placeholder – Registry Detection]
+![Lab 3 Screenshot 5](https://raw.githubusercontent.com/danyl-infosec/Remediation-SOC-Lab/refs/heads/main/Lab%203%20Screenshot%20%235.png)
+
 
 ### Analysis
 - Artifact/TTP: Registry modification to disable Windows Defender real‑time monitoring.
@@ -58,20 +59,9 @@ In this lab I show how I handled a malicious alert using the Pyramid of Pain fra
 
 ### Remediation
 - Authored Sigma rule targeting Sysmon registry events:
-  ```yaml
-  title: Windows Defender Realtime Protection Disabled
-  id: thm-lab-002
-  status: experimental
-  description: Detects registry modification disabling Defender realtime monitoring
-  logsource:
-    category: registry
-    product: windows
-  detection:
-    selection:
-      TargetObject: 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Real-Time Protection\DisableRealtimeMonitoring'
-      Details: 'DWORD (0x00000001)'
-    condition: selection
-  level: high
-  tags:
-    - attack.defense_evasion
-    - attack.tactic.TA0005
+- **Registry Key**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Real-Time Protection
+- **Registry Name**: Disable Realtime Monitoring
+- **Value**: 1
+- **Att&ck ID**: Defence Evasion TA0005
+  
+![Lab 3 Screenshot 8](https://raw.githubusercontent.com/danyl-infosec/Remediation-SOC-Lab/refs/heads/main/Lab%203%20Screenshot%20%238.png)

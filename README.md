@@ -1,7 +1,7 @@
 # Remediation SOC Lab – Pyramid of Pain Case Study
 
 ## Objective
-In this lab I walk through how I handled a malicious alert using the Pyramid of Pain framework. I started with quick containment at the IOC level by blocking a malicious IP through firewall rules, then moved up the pyramid to disrupt defense evasion by creating a Sigma rule for registry changes at the host artifact level. This highlights a layered SOC approach — detecting, analyzing, and remediating threats across both network and host environments.
+In this lab I walk through how I handled a malicious alert using the Pyramid of Pain framework. I started with quick containment at the IOC level by blocking a malicious IP through firewall rules, then moved up the pyramid to disrupt defense evasion by creating a Sigma rule for registry changes at the host artifact level. This highlights a layered SOC approach, detecting, analyzing, and remediating threats across both network and host environments.
 
 ---
 
